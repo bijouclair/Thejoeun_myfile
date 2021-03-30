@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>block : html</title>
+</head>
+<body>
+    <h1>html block & inline</h1>
+
+    <h2>1. block 요소</h2>
+    <p>- 블록 요소는 가로, 세로 값을 가지고 밑으로 떨어진다.</p>
+
+    <div style="border: 1px solid red; width: 100px; height: 100px;">블록태그</div>
+        <!-- ctrl+/ 주석  -->
+        <!-- border : blue, w:300, h:100  -->
+    <div style="border: 1px solid blue; width: 300px; height: 100px;">블록태그</div>
+
+    <hr>
+    <h2>2.inline 요소</h2>
+    <p>- 인라인 요소는 가로, 세로 값을 가질 수 없고 옆으로 붙는다.</p>
+
+    <!-- border:purple, w100, h100 -->
+    <span style="border: 1px solid purple; width: 100px; height: 100px;">인라인 - span</span>
+    <b>인라인 - b태그</b>
+    <strong>인라인 - strong태그</strong>
+    <a href="#">인라인 - a태그</a>
+    <img src="./images/banner.jpg" alt="배너" style="width: 100px;">
+
+    <hr>
+    <h2>3. inline-block 요소</h2>
+    <p>-인라인 태그의 가로, 세로 값을 주고 싶으면 display값을 block요소로 변경 가능</p>
+    <a href="#" style="width: 100px; height: 50px; background-color: cornflowerblue; display: block;">menu1</a>
+    <a href="#" style="width: 100px; height: 50px; background-color: rgb(100, 205, 237); display: block;">menu2</a>
+    <a href="#" style="width: 100px; height: 50px; background-color: rgb(100, 237, 118); display: block;">menu3</a>
+    <a href="#" style="width: 100px; height: 50px; background-color: rgb(237, 228, 100); display: block;">menu4</a>
+    <br>
+    <p>- 인라인 블록 요소는 가로, 세로 값을 가질 수 있고 옆으로 배치 </p>
+    <a href="#" style="width: 100px; height: 50px; background-color: cornflowerblue; display: inline-block;">menu1</a>
+    <a href="#" style="width: 100px; height: 50px; background-color: rgb(100, 205, 237); display: inline-block;">menu2</a>
+    <a href="#" style="width: 100px; height: 50px; background-color: rgb(100, 237, 118); display: inline-block;">menu3</a>
+    <a href="#" style="width: 100px; height: 50px; background-color: rgb(237, 228, 100); display: inline-block;">menu4</a>
+ 
+
+</body>
+</html>

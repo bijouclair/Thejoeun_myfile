@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border : css</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+            font-size: 14px; line-height: 1.5;color: #000;
+            text-decoration: none;box-sizing: border-box;
+            list-style: none;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>border</h1>
+
+    <div class="bd-1">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+    </div>
+    <div class="bd-2">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+    </div>
+    <div class="bd-3">radius1</div>
+    <div class="bd-4">radius2</div>
+    <div class="bd-5">radius3</div>
+    <!-- div는 블럭요소이므로, 가로는 100% / 높이값은 컨텐츠의 높이값 / 따라서, 자동으로 안들어가므로 지정하거나 글자를 넣어야 함 -->
+    <!-- div사이는 margin으로 떼어야 함 -->
+
+    <style>
+        body{
+            padding-bottom: 300px;
+        }
+        div{
+            margin-bottom: 10px;   
+        }
+        .bd-1{
+            border: 1px solid tomato;
+        }   
+        .bd-2{
+            border: 1px solid rgba(0, 0, 0, 0.5);
+        }
+        .bd-3{
+            width: 200px;height: 200px;
+            background-color:aqua;
+            border-radius: 5px;
+        }
+        .bd-4{
+            width: 200px;height: 200px;
+            background-color:tomato;
+            border-radius: 50%;
+            /* 가로, 세로 값이 같은 상태에서 radius 50%를 넣으면 원이된다 */
+        }
+        .bd-5{
+            width: 200px;height: 200px;
+            background-color: green;
+            border-radius: 10px 50px 100px;
+
+        }
+    </style>
+
+    
+</body>
+</html>

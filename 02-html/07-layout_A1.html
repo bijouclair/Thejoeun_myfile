@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout : html</title>
+</head>
+
+<style>
+    .wrap{
+        width: 1000px;height: 650px;
+    }
+    h1{
+        display: flex;
+        align-items: center;
+    }
+</style>
+
+<body>
+    <div class="wrap"></div>
+    <!-- header (로고, gnb, 유틸메뉴, 햄버거메뉴)-->
+    <header>
+        <h1>
+            <a href="#">JUST 쇼핑몰</a>
+        </h1>
+        <nav>
+            <ul class="nav-depth1">
+                <li>
+                    <a href="#">menu1</a>
+                    <ul class="nav-depth2">
+                        <li><a href="#">menu1-1</a></li>
+                        <li><a href="#">menu1-2</a></li>
+                        <li><a href="#">menu1-3</a></li>
+                        <li><a href="#">menu1-4</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">menu2</a>
+                    <ul class="nav-depth2">
+                        <li><a href="#">menu2-1</a></li>
+                        <li><a href="#">menu2-2</a></li>
+                        <li><a href="#">menu2-3</a></li>
+                        <li><a href="#">menu2-4</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">menu3</a>
+                    <ul class="nav-depth2">
+                        <li><a href="#">menu3-1</a></li>
+                        <li><a href="#">menu3-2</a></li>
+                        <li><a href="#">menu3-3</a></li>
+                        <li><a href="#">menu3-4</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">menu4</a>
+                    <ul class="nav-depth2">
+                        <li><a href="#">menu4-1</a></li>
+                        <li><a href="#">menu4-2</a></li>
+                        <li><a href="#">menu4-3</a></li>
+                        <li><a href="#">menu4-4</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <!-- slide (슬라이드는 태그가 없어서 class이름으로 만듦)-->
+    <div class="slide">슬라이드</div>
+    <!-- //slide -->
+
+    <!-- container -->
+    <div class="container">
+        <div class="tab">
+            <section>
+                <h2>공지사항</h2>
+                <div class="cont">공지사항내용</div>
+            </section>
+            <section>
+                <h2>갤러리</h2>
+                <div class="cont">갤러리내용</div>
+            </section>
+        </div>
+        <section>
+            <h2>배너</h2>
+            <div class="cont">배너내용</div>
+        </section>
+        <section>
+            <h2>바로가기</h2>
+            <div class="cont">바로가기내용</div>
+        </section>
+    </div>
+    <!-- //container -->
+
+    <!-- footer -->
+    <footer>
+        <h1>
+            <a href="#">JUST쇼핑몰</a>
+        </h1>
+        <div class="copyright">copyright</div>
+        <div class="sns">sns</div>
+    </footer>
+    <style>
+        footer{
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+    <!-- //footer -->
+
+</body>

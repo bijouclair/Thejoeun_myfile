@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background : css</title>
+</head>
+<body>
+    <h1>css background</h1>
+    <h2>1. background-color</h2>
+    <ul class="bg-c">
+        <li>background-color : tomato</li>
+        <li>background-color : hex</li>
+        <li>background-color : rgb</li>
+        <li>background-color : rgba</li>
+    </ul>
+    <style>
+        .bg-c li:first-child{
+            background-color: tomato;
+        }
+        .bg-c li:nth-child(2){
+            background-color: #ff6347;/* hex */
+        }
+        
+        .bg-c li:nth-child(3) {
+            background-color: rgb(255,99,71);/* rgb */
+            border: 5px solid red;
+            opacity : 0.5
+        /* 통째로 opacity : font-color, border, bgc */
+        }
+        
+        .bg-c li:last-child {
+            background-color: rgba(255,99,71,0.5);/* 투명도 넣을때 rgba로 넣음, 기본값은 1, bgc에만 투명도가 들어감*/
+        
+        border: 5px solid red;
+        }
+    </style>
+
+    <hr>
+    <h2>2. background-images</h2>
+
+    <h1 class="logo">
+        <a href="#">네이버</a>
+        <!-- 매일 바뀌는 이미지가 아니므로 bgi로 깔아주면 됨 -->
+    </h1>
+
+    <style>
+        .logo a{
+            display: block;
+            height: 320px;width: 830px;/* 가로 세로 값을 꼭 넣어주어야 background img가 보임 */
+            background-image: url(./images/logo-naver1.gif);
+            text-indent: -9999px;
+        }
+    </style>
+    
+    <hr>
+    <h2>3.background-repeat</h2>
+    <div class="bg-repeat">
+    </div>
+    <style>
+        .bg-repeat{
+            height: 500px; 
+            background-color: #eee;
+            background-image: url("./images/bg-repeat.jpg");
+            background-repeat: no-repeat;
+            /* repeat-x, repeat-y, no-repeat */
+            background-position: 50% 50%;
+            /* 우측상단 : 100% 0; 우측하단 : 100% 100%; 좌측하단 : 0 100%; 센터 50% 50% */
+
+        }
+    </style>
+
+    <hr>
+    <h2>4.background-position</h2>
+    <h1 class="logo2">
+        <a href="#">네이버</a>
+    </h1>
+
+    <style>
+        .logo2 a{
+            display: block;
+            width: 442px;height: 104px;
+            background-image: url(./images/sp_main.png);
+            background-repeat: no-repeat;
+            background-position: 0 -316px;
+            /* 우측, 하단으로 가면 마이너스(-) */
+            border: 1px solid #000;
+            text-indent: -99999px;
+        }
+    </style>
+
+    <hr>
+    <!-- live icon // icon은 i태그-->
+    <i class="ico-live">live</i>
+    <!-- class이름 : 역할이름+상세 -->
+    <style>
+        .ico-live{
+            display: block;
+            width: 93px; height: 40px;
+            background-image: url(./images/sp_main.png);
+            background-repeat: no-repeat;
+            background-position: -540px -490px;
+            text-indent: -9999px;
+        }
+    </style>
+
+    <hr>
+    <!-- 링크 -->
+    <a href="#" class="link-g link-prev">이전페이지로이동</a>
+    <a href="#" class="link-g link-next">다음페이지로이동</a>
+    <!-- link-g : 공통클래스(버튼 2개가 크기가 같으므로) / 앞에 적고 spacebar 누르고 다음 class값 쓴다-->
+    <style>
+        .link-g {
+            display: inline-block;
+            width: 78px;height: 81px;
+            background-image: url(./images/sp_main.png);
+            background-repeat: no-repeat;
+            text-indent: -9999px;
+        }
+        .link-prev {            
+            background-position: -257px -681px;           
+        }
+        .link-next {
+            background-position: -346px -681px;
+        }
+    </style>
+
+    <hr>
+    <h2>5.background-attachment</h2>
+    <div class="bg-att"></div>
+
+    <style>
+        .bg-att{
+            height: 200px;
+            background-image: url(./images/map.jpg);
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-attachment: fixed;
+        }
+    </style>
+
+    <hr>
+    <h2>6.background-size</h2>
+    <div class="bg-g bg-s1"></div>
+    <div class="bg-g bg-s2"></div>
+    <div class="bg-g bg-s3"></div>
+    <div class="bg-g bg-s4"></div>
+    <div class="bg-g bg-s5"></div>
+    <style>
+        .bg-g {
+            height: 300px;
+            background-color: #eee;
+            background-image: url(./images/christmas.jpg);
+            background-repeat: no-repeat;
+            border: 1px solid #000;
+        }
+        .bg-s2{background-size: 200px auto;}
+        .bg-s3{background-size: 50% auto;}
+        .bg-s4{
+            background-size: contain;
+            background-position: 50% 50%;
+        }
+        /* contain : 백그라운드이미지를 짦은 축을 기준으로 꽉 채움 */
+        /* 버튼 같은 경우 - 이미지가 잘려나가면 안돼 */
+        .bg-s5{
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+        /* cover : 백그라운드 이미지를 긴 축을 기준으로 꽉 채움 */
+        /* 슬라이드 이미지 - 이미지 잘려나가도 돼 무조건 꽉 채워줘 */
+    </style>
+
+    <h2>7. background short-hand</h2>
+    <div class="bg-short"></div>
+
+    <style>
+        .bg-short{
+            height: 200px;
+            background: #eee url(./images/bg-a.jpg) 0 50% no-repeat;
+            background-size: cover;
+        }
+    </style>
+
+</body>
+</html>

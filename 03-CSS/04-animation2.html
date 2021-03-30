@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation2</title>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+
+    <style>
+        .wrap{
+            position: relative;  
+            height: 500px;
+            background-color: #eee;
+        }
+        .wrap .box1{
+            position: absolute;top: 150px;left: -100px;
+            width: 100px;height: 100px;
+            background-color:rgba(0, 0, 255,0.5);
+            
+            animation-name: box;
+            animation-duration: 1s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+        }
+        .wrap .box2{
+            position: absolute;bottom: 0px;right: -300px;
+            width: 300px;height: 300px;border-radius: 50%;
+            background-color:rgb(255, 192, 203, 0.5);
+            
+            animation-name: circle;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes box {
+            0%{top: 150px;left: -100px; background-color: rgba(0, 0, 255,0.5);}
+            100%{top: 200px;left: 430px; background-color: rgba(0, 0, 255,0.5);}
+        }
+
+        @keyframes circle {
+            0%{top: 200px;left: 1000px; background-color: rgba(255, 192, 203, 0.5);}
+            100%{top: 250px;left: 500px; background-color: rgba(255, 192, 203, 0.5);}
+            
+        }
+    </style>
+    
+</body>
+</html>

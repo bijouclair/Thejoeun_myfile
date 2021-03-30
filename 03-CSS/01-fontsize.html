@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fontsize : css</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+            line-height: 1.5;font-size:12px;color: black;
+            text-decoration: none;box-sizing: border-box;
+            list-style: none;
+            font-family: 'ubuntu', 'notosan';
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>fontsize</h1>
+
+    <h2>1.px단위 (절대값)</h2>
+    <div class="size-1">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Atque blanditiis dolores ratione. Repellat, dolores blanditiis tempora,
+        id numquam saepe eos quaerat voluptatibus iure natus quibusdam vero,  
+        aperiam laudantium nemo eligendi.
+    </div>
+
+    <style>
+    .size-1{
+        /* font-size: 14px;line-height: 1.5; */
+    }
+    </style>
+
+    <hr>
+    <h2>2. em단위(상대값)</h2>
+    <ul>
+        <li>안녕하세요. <strong>더조은</strong>입니다. </li>
+        <li><strong>더조은 컴퓨터</strong>에서 공지합니다.</li>
+        <li><strong>웹디자인(퍼블리싱)</strong> 오픈 합니다.</li>
+    </ul>
+
+    <style>
+        ul li:first-child {font-size: 14px;}
+        ul li:first-child strong{font-size: 28px;}
+        /* px은 reset의 폰트사이즈를 바꾸어도 변경되지 않음 */
+
+        /* 기준폰트 12px */
+        ul li:nth-child(2) {font-size: 1.333em;} /* 16px */
+        ul li:nth-child(2) strong {font-size: 2.667em;} /* 32px */
+        /* em단위는 reset의 폰트사이즈를 기준으로 설정되며 배수로 됨 */
+        /* em으로 패딩, 마진값도 쓴다. 폰트사이즈 기준 */
+
+        ul li:last-child {font-size: 2em;}
+        /* 자식 em 부모기준 (li안에 strong태그가 있으므로 li가 엄마 / strong이 자식이다.) */
+        /* rem단위는 reset 기준 (부모기준x) */
+        ul li:last-child strong {font-size: 2rem;} 
+        
+    </style>
+    
+    <hr>
+    <h2>3. vw, vh단위 (뷰포트 기준)</h2>
+    <div class="size-3">가나다라마바사</div>
+    <style>
+        .size-3{
+            /* width: 100vw; viewport width */
+            height: 100vh; /* viewport height */
+            background-color: tomato;
+            font-size: 10vw;/* 100vW : 한 글자당 브라우저를 꽉 채움 */
+        }
+    </style>
+
+
+<br><br><br><br><br>
+    
+
+</body>
+</html>

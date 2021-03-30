@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table : html</title>
+</head>
+
+<body>
+    <h1>html table</h1>
+
+    <h2>1. 테이블기본</h2>
+    <table border="1" style="width: 50%;">
+        <caption>테이블제목</caption>
+        <colgroup>
+            <col>
+            <col width="30%" span="2">
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th scope="row">이름</th>
+                <th scope="col">오다다</th>
+                <th scope="col">진</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th scope="row">국어</th>
+                <td>90점</td>
+                <td>100점</td>
+            </tr>
+            <tr>
+                <th scope="row">수학</th>
+                <td>80점</td>
+                <td>100점</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th scope="row">총점</th>
+                <td>170점</td>
+                <td>200점</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <hr>
+    <table border="1" style="width: 50%;">
+        <tr>
+            <th>이름</th>
+            <th colspan="2">오다다</th>
+        </tr>
+        <tr>
+            <th rowspan="2">국어</th>
+            <td>90점</td>
+            <td>100점</td>
+        </tr>
+        <tr>
+            <!-- <td>수학</td> -->
+            <td>80점</td>
+            <td>100점</td>
+        </tr>
+    </table>
+
+
+</body>
+
+</html>

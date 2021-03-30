@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font : css</title>
+    <!-- 둘 중 하나 방법으로 하면 된다. html에 링크 거는 것을 권장함 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="./CSS/comm.css">
+    <style>
+        body{
+            font-family: 'Nanum Myeongjo', serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>font</h1>
+
+    <p class="txt-1">Lorem <span>ipsum dolor sit,</span> amet consectetur adipisicing elit. 
+        Quia nam quidem labore, commodi ducimus quos? Dolore deserunt maxime nobis 
+        fugiat id velit dicta? Obcaecati totam eum voluptate et ut nobis.</p>
+
+    <STRONG class="tit">나는 타이틀이야</STRONG>    
+
+    <style>
+        .txt-1{
+            font-family: "나눔고딕 에코";
+            font-size: 40px;
+        }
+        .txt-1 span{
+            color: tomato;
+        }
+        .tit{
+            font-weight: normal;
+        }
+    </style>
+
+</body>
+</html>

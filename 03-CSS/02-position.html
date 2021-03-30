@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position : css</title>
+</head>
+<body>
+    <h1>position</h1>
+
+    <div class="box5">sticky</div>
+
+    <div class="wrap">
+        <div class="inner">
+            <div class="box1">fixed</div>
+            <div class="box2">fiexd center</div>
+            <div class="box3">absolute</div>
+            <div class="box4">absolute center</div>
+            
+            <div class="box6"></div>
+        </div>
+    </div>
+   
+
+    <style>
+        /* fixed gnb */
+         .box1{             
+             position: fixed;top: 0;left: 0;right: 0;
+             height: 50px;
+             /* width: 100%; */
+             background-color:rgba(255, 184, 194, 0.5);  
+             z-index: 100;          
+        }
+
+        .box2{
+            position: fixed;right:0; top:50%; z-index: 100;/* 무조건 바디 기준으로, 조건을 쓸 필요가 없음 / top 0 left 0 디폴트값 */
+            width: 20px; height: 100px; margin-top: -50px;/* top, left 기준으로 가운데 정렬이 되므로 / h100이므로, 절반 정도 수치로 마진을 당기면 화면 한 가운데 정렬이 된다. */
+            writing-mode: tb-rl;
+            background-color: #fff;
+        }
+
+        .box3{
+            width: 50px;height: 50px;
+            background-color:tomato;
+            position: absolute;bottom:0;right: 0;
+        }
+
+        .box4{
+            width: 100px;height: 100px;
+            background-color:aqua;
+            position:absolute; right:50%; bottom: 50%;
+            margin-top: -50px 0 0 -50px;
+        }
+
+        .box5{
+            width: 100%;height: 50px; z-index: 200;/* z-index속성은 요소의 적층 순서를 지정한다. */
+            background-color: violet;
+            position: -webkit-sticky;
+            position: sticky; top: 0;left: 0;
+        }
+
+        .wrap{
+            position: relative;
+            height: 100vh;
+            background-color:brown;
+        }
+
+    </style>
+    
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+</body>
+</html>
