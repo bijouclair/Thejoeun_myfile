@@ -1,0 +1,20 @@
+@charset "UTF-8";
+@import "contents", "main","mixins","reset", "variables";
+
+#header{
+   justify-content: space-between;
+
+    .logo{
+        margin-bottom: 0;
+    }
+
+    #collapsibleNavbar .show{
+        // 중복 클래스로 show가 붙은 모바일 버전에서만 
+        position: fixed; top: 56px;left: 0;right: 0;
+        height: 100vh;
+        background-color: #000;    
+        opacity: 0.3;    
+
+        // 2depth 디자인할때, html에 show라는 클래스 추가했다가 추후 삭제 가능
+    }
+}
