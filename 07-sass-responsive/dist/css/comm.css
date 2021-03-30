@@ -1,0 +1,655 @@
+@charset "UTF-8";
+/* reset */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button, article, section {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* ▲ article, section 태그 추가 */
+fieldset, img {
+  border: 0 none;
+}
+
+dl, ul, ol, menu, li {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+input, select, textarea, button {
+  font-size: 100%;
+  vertical-align: middle;
+}
+
+button {
+  border: 0 none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+}
+
+/* 뷰표트 변환시 폰트크기 자동확대 방지 */
+input[type='text'], input[type='password'], input[type='submit'], input[type='search'] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+input:checked[type='checkbox'] {
+  background-color: #666;
+  -webkit-appearance: checkbox;
+}
+
+button, input[type='button'], input[type='submit'], input[type='reset'], input[type='file'] {
+  -webkit-appearance: button;
+  border-radius: 0;
+}
+
+input[type='search']::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+body {
+  background: #fff;
+}
+
+/* 기본 폰트 설정 */
+body, th, td, input, select, textarea, button {
+  font-size: calc(14px + 0.1vw);
+  /* 14px 기준으로 뷰포트에 맞추어서 글씨 사이즈 키워줘 */
+  line-height: 1.5;
+  font-family: 'Noto Sans KR','Malgun Gothic', '맑은 고딕', sans-serif;
+  color: #333;
+}
+
+/* color값은 디자인가이드에 맞게사용 */
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:active, a:hover {
+  text-decoration: none;
+}
+
+address, caption, cite, code, dfn, em, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+address, caption, cite, code, dfn, em, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+hr {
+  display: none;
+}
+
+input[type=password] {
+  font-family: 'Malgun Gothic';
+}
+
+/* 웹폰트 사용시 패스워드에 동그라미가 안들어가는 경우가 있어서 기본폰트를 써줘야 한다. */
+/* skipnavigation */
+#u-skip a {
+  position: absolute;
+  left: -3000%;
+}
+
+#u-skip a:focus {
+  display: block;
+  left: 0;
+  top: 0;
+  z-index: 10000000000;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background: #0072bc;
+  color: #fff;
+  text-align: center;
+}
+
+/* 이미지 스프라이트 */
+.img_g {
+  display: inline-block;
+  overflow: hidden;
+  background: url(../../images/comm/img-comm.png) no-repeat;
+  vertical-align: top;
+}
+
+/* 이미지 */
+/* global */
+.ir_pm {
+  display: block;
+  overflow: hidden;
+  font-size: 0px;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
+/* 사용된 이미지내 의미있는 텍스트의 대체텍스트를 제공할때 */
+.ir_wa {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+}
+
+/* 중요한 이미지 대체텍스트로 이미지off시에도 대체 텍스트를 보여주고자 할때 */
+.blind, caption, legend {
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
+/* 대체텍스트가 아닌 접근성을 위한 숨김텍스트를 제공할때 */
+.f_l {
+  float: left;
+}
+
+.f_r {
+  float: right;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.tbl {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 테이블 초기화 */
+.clear_g {
+  display: block;
+  overflow: visible;
+  width: auto;
+  clear: both;
+  *zoom: 1;
+}
+
+.clear_g:after {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  font-size: 0;
+  clear: both;
+  content: '';
+}
+
+.wrap {
+  padding-left: 200px;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  text-align: center;
+}
+
+header .logo {
+  margin-bottom: 40px;
+}
+
+header .logo a {
+  display: block;
+  height: 62px;
+  margin: 10px 0 0 20px;
+}
+
+header .nav-goto {
+  margin: auto 0 0;
+}
+
+header .nav-goto .link-goto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .nav-goto .link-goto li:first-child a::before {
+  display: none;
+}
+
+header .nav-goto .link-goto a {
+  position: relative;
+  display: block;
+  padding: 5px 20px;
+}
+
+header .nav-goto .link-goto a::before {
+  position: absolute;
+  top: 8;
+  left: 0;
+  display: block;
+  content: "";
+  width: 1px;
+  height: 20px;
+  background-color: #000;
+}
+
+header .nav-goto .link-sns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#gnb li {
+  text-align: left;
+}
+
+#gnb li a {
+  display: block;
+  padding: 5px 60px;
+}
+
+#gnb li a::before {
+  font-family: 'Line Awesome Free';
+  font-weight: 900;
+  vertical-align: middle;
+  /* 아이콘, 글씨가 세로 가운데 정렬 */
+  margin-top: -3px;
+  /* 아이콘, 글씨가 세로 가운데 정렬 */
+}
+
+#gnb li:first-child a::before {
+  content: "\f594";
+}
+
+#gnb li:nth-child(2) a::before {
+  content: "\f1ad";
+}
+
+#gnb li:nth-child(3) a::before {
+  content: "\f0b1";
+}
+
+#gnb li:last-child a::before {
+  content: "\f2e7";
+}
+
+.nav-util {
+  height: 50px;
+  background-color: #000;
+}
+
+#main {
+  height: calc(100vh - 50px);
+  background-color: #eee;
+}
+
+#main article {
+  position: relative;
+  float: left;
+  width: 20%;
+  height: 25%;
+  padding: 20px;
+}
+
+#main article::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.07;
+}
+
+#main article:first-child {
+  width: 60%;
+  height: 50%;
+  background: url(../../images/1.jpg) 0 0 no-repeat;
+  background-size: cover;
+}
+
+#main article:nth-child(2) {
+  width: 40%;
+  height: 25%;
+  background-color: rgba(135, 206, 235, 0.9);
+}
+
+#main article:nth-child(3) {
+  position: relative;
+  background-color: rgba(135, 206, 235, 0.8);
+}
+
+#main article:nth-child(3) i {
+  overflow: hidden;
+  position: absolute;
+  bottom: -3vw;
+  right: -3vw;
+  font-size: 14vw;
+  color: #fff;
+  -webkit-animation: ani-sync 1s infinite;
+          animation: ani-sync 1s infinite;
+}
+
+@-webkit-keyframes ani-sync {
+  0% {
+    -webkit-transform: rotate(0 deg);
+            transform: rotate(0 deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes ani-sync {
+  0% {
+    -webkit-transform: rotate(0 deg);
+            transform: rotate(0 deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+#main article:nth-child(4) {
+  background: url(../../images/4.jpg) 0 0 no-repeat;
+  background-size: cover;
+}
+
+#main article:nth-child(5) {
+  width: 20%;
+  height: 25%;
+  background: url(../../images/5.jpg) 0 0 no-repeat;
+  background-size: cover;
+}
+
+#main article:nth-child(6) {
+  width: 40%;
+  height: 25%;
+  background-color: rgba(135, 206, 235, 0.5);
+}
+
+#main article:nth-child(7) {
+  background: url(../../images/7.jpg) 0 0 no-repeat;
+  background-size: cover;
+}
+
+#main article:nth-child(8) {
+  background-color: rgba(135, 206, 235, 0.3);
+}
+
+#main article:nth-child(9) {
+  width: 40%;
+  height: 25%;
+  background: url(../../images/9.jpg) 0 0 no-repeat;
+  background-size: cover;
+}
+
+#main article:nth-child(10) {
+  background: url(../../images/10.jpg) 0 0 no-repeat;
+  background-size: cover;
+}
+
+#main article:nth-child(11) {
+  background-color: rgba(135, 206, 235, 0.15);
+}
+
+#main article:last-child {
+  background: url(../../images/12.jpg) 0 0 no-repeat;
+  background-size: cover;
+}
+
+@media screen and (max-width: 1599px) {
+  .wrap {
+    padding-left: 0px;
+  }
+  #gnb a::before {
+    display: inline-block;
+  }
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: static;
+    width: 100%;
+    height: 100px;
+    /* 높이값은 %로 작업하면 안된다 */
+  }
+  header .logo a {
+    line-height: 100px;
+  }
+  header #gnb {
+    width: 40%;
+  }
+  header #gnb ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    line-height: 100px;
+  }
+  header #gnb ul a {
+    display: block;
+    width: 100px;
+    height: 100px;
+  }
+  header .nav-goto {
+    display: none;
+  }
+  #main {
+    height: auto;
+  }
+  #main article {
+    height: 250px;
+  }
+  #main article:first-child {
+    height: 500px;
+  }
+  #main article:nth-child(2) {
+    height: 250px;
+  }
+  #main article:nth-child(6) {
+    height: 250px;
+  }
+  #main article:nth-child(9) {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  #main article {
+    width: 25%;
+  }
+  #main article:first-child {
+    width: 75%;
+  }
+  #main article:nth-child(2) {
+    width: 25%;
+  }
+  #main article:nth-child(3) {
+    width: 25%;
+  }
+  #main article:nth-child(6) {
+    width: 50%;
+  }
+  #main article:nth-child(7) {
+    width: 50%;
+  }
+  #main article:nth-child(9) {
+    width: 25%;
+  }
+  #main article:nth-child(10) {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  #main article {
+    /* 반대는 display : block */
+    /* 반대는 display : block */
+    /* 반대는 display : block */
+  }
+  #main article:first-child {
+    width: 99.999%;
+  }
+  #main article:nth-child(2) {
+    width: 66.666%;
+  }
+  #main article:nth-child(3) {
+    width: 33.333%;
+  }
+  #main article:nth-child(4) {
+    display: none;
+  }
+  #main article:nth-child(5) {
+    width: 33.333%;
+  }
+  #main article:nth-child(6) {
+    width: 66.666%;
+  }
+  #main article:nth-child(7) {
+    display: none;
+  }
+  #main article:nth-child(10) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 779px) {
+  #main article {
+    /* 반대는 display : block */
+    /* 반대는 display : block */
+  }
+  #main article:first-child {
+    width: 100%;
+  }
+  #main article:nth-child(2) {
+    width: 100%;
+  }
+  #main article:nth-child(3) {
+    display: none;
+  }
+  #main article:nth-child(5) {
+    width: 50%;
+  }
+  #main article:nth-child(6) {
+    width: 50%;
+  }
+  #main article:nth-child(8) {
+    width: 50%;
+  }
+  #main article:nth-child(9) {
+    width: 50%;
+  }
+  #main article:nth-child(11) {
+    width: 50%;
+  }
+  #main article:last-child {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .nav-util {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    -webkit-transform: translateY(-60px);
+            transform: translateY(-60px);
+    height: 100vh;
+  }
+  header * {
+    color: #fff;
+  }
+  header .nav-goto {
+    display: none;
+  }
+  header #gnb ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header #gnb ul a {
+    display: block;
+    height: 20px;
+  }
+  #main article:first-child {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  #main article:first-child strong {
+    display: none;
+  }
+  #main article:nth-child(n+2) {
+    display: none;
+  }
+}
+/*# sourceMappingURL=comm.css.map */

@@ -1,0 +1,330 @@
+@charset "UTF-8";
+@import "reset", "main", "contents", "variables","mixins";
+
+// width 1599px 이상일 경우
+// layout
+.wrap{
+    padding-left : 200px;
+}
+
+header{
+    display: flex;flex-direction: column; 
+    //  justify-content: space-between;
+    position: fixed;top: 0;left: 0;bottom: 0;    
+    width: 200px; 
+    // background-color:#232530;
+    text-align: center;
+
+    .logo{
+        margin-bottom: 40px;
+        a{
+            display: block;
+            height: 62px;margin: 10px 0 0 20px;
+            // background : url(../../images/logo.jpg 0 0 no-repeat;
+        }
+    }
+    .nav-goto{
+        margin: auto 0 0 ;
+        .link-goto{
+            display: flex; justify-content: center;
+
+            li:first-child {
+                a::before{
+                    display: none;
+                }
+            }
+
+            a {
+                position :relative;
+                display: block;
+                padding: 5px 20px;
+                &::before {
+                    position: absolute;top: 8;left: 0;
+                    display: block;
+                    content: "";
+                    width: 1px;height: 20px; background-color: #000;
+                }
+            }
+        }
+        .link-sns {
+            display: flex;justify-content: center;
+        }
+    }
+    
+}
+    
+
+#gnb li {
+    text-align: left;
+    a{
+        display: block;
+        padding: 5px 60px;
+
+        &::before{
+            font-family: 'Line Awesome Free';
+            font-weight: 900;    
+            vertical-align: middle;/* 아이콘, 글씨가 세로 가운데 정렬 */
+            margin-top: -3px; /* 아이콘, 글씨가 세로 가운데 정렬 */
+        }
+    }    
+    &:first-child a::before{content :"\f594";}
+    &:nth-child(2) a::before{content :"\f1ad";}
+    &:nth-child(3) a::before{content :"\f0b1";}
+    &:last-child a::before{content :"\f2e7";}
+}
+
+.nav-util {
+    height: 50px;
+    background-color:$b;
+}
+
+// css (두개의 css를 선택)
+// #main.container{} /* 아이디가 main이고, class가 container인 아이 */
+
+// article 가로, 세로값 변수처리
+$width : 20%; $height : 25%;
+
+#main {
+    height: calc(100vh - 50px);
+    background-color: #eee;  
+    // &.container{} /* 아이디가 main이고, class가 container인 아이 */
+
+    article{
+        position: relative;
+        float: left;
+        width: $width; height: $height;
+        padding: 20px;
+        // article의 첫번째 선택
+        &::before {
+            // 모든 아티클에 필터를 넣겠다는 의미
+            content : "";
+            position: absolute;top: 0;left: 0;
+            background-color: $b;
+            opacity: 0.07;
+        }
+        &:first-child {
+            width: $width * 3;height: $height * 2;
+            // background-color : rgba($blue, 1);
+            background : url(../../images/1.jpg) 0 0 no-repeat;
+            background-size: cover; 
+        }
+        &:nth-child(2) {
+            width: $width * 2;height: $height * 1;
+            background-color : rgba($blue, 0.9);
+        }
+        &:nth-child(3) {
+            position: relative;
+            background-color : rgba($blue, 0.8);
+            i{
+                overflow: hidden;
+                position: absolute;bottom: -3vw;right:  -3vw;
+                font-size: 14vw; color:$w;
+                animation: ani-sync 1s infinite;
+            }
+            @keyframes ani-sync {
+                0% {transform: rotate(0 deg);}
+                100% {transform: rotate(359deg);}
+            }
+        }
+        &:nth-child(4) {
+            // background-color : rgba($blue, 0.7);
+            background : url(../../images/4.jpg) 0 0 no-repeat;
+            background-size: cover; 
+        }
+        &:nth-child(5) {
+            width: $width * 1; height: $height * 1;
+            // background-color : rgba($blue, 0.6);
+            background : url(../../images/5.jpg) 0 0 no-repeat;
+            background-size: cover; 
+        }
+        &:nth-child(6) {
+            width: $width * 2;height: $height * 1;
+            background-color : rgba($blue, 0.5);
+        }
+        &:nth-child(7) {
+            // background-color : rgba($blue, 0.4);
+            background : url(../../images/7.jpg) 0 0 no-repeat;
+            background-size: cover; 
+        }
+        &:nth-child(8) {background-color : rgba($blue, 0.3);}
+        &:nth-child(9) {
+            width: $width * 2;height: $height * 1;
+            // background-color : rgba($blue, 0.25);
+            background : url(../../images/9.jpg) 0 0 no-repeat;
+            background-size: cover; 
+        }
+        &:nth-child(10) {
+            // background-color : rgba($blue, 0.2);
+            background : url(../../images/10.jpg) 0 0 no-repeat;
+            background-size: cover; 
+        }
+        &:nth-child(11) {background-color : rgba($blue, 0.15);}
+        &:last-child {
+            // background-color : rgba($blue, 0.1);
+            background : url(../../images/12.jpg) 0 0 no-repeat;
+            background-size: cover; 
+        }
+    }
+}
+
+
+//  1280px < width <1599px  
+@media screen and (max-width : 1599px){
+    .wrap{
+        padding-left : 0px;
+    }
+    
+    #gnb a::before{
+        display: inline-block;
+    }
+
+    header{
+        display: flex;justify-content: space-between;
+        position:static;
+        width: 100%; height: 100px; /* 높이값은 %로 작업하면 안된다 */
+        // background-color: tomato;
+
+        .logo{
+            a {
+                line-height: 100px;
+            }
+        }
+
+        #gnb {
+            width: 40%;
+            
+            ul{
+                display: flex;justify-content: space-between;
+                line-height: 100px;
+                
+                a{                    
+                display: block;
+                width: 100px; height: 100px;
+                }
+            }
+        }
+        .nav-goto{
+            display: none;
+        }
+    }
+
+    //미디어쿼리 안에서만 사용하는 변수
+     $height : 250px;
+
+    #main {
+        height: auto;
+       
+        article {
+            height:  $height;            
+            &:first-child{height:  $height*2;}
+            &:nth-child(2) {height: $height * 1;}
+            &:nth-child(6) {height: $height * 1;}
+            &:nth-child(9) {height: $height * 1;}
+        }
+    }
+    
+}
+
+// 1023px < width <1280px  
+@media screen and (max-width : 1280px){
+   
+    $width : 25%;
+
+    #main {
+       
+       
+        article {
+            width: $width;
+            &:first-child{width: $width * 3;}
+            &:nth-child(2) {width: $width* 1;}
+            &:nth-child(3) {width: $width* 1;}
+            &:nth-child(6) {width: $width* 2;}
+            &:nth-child(7) {width: $width* 2;}
+            &:nth-child(9) {width: $width* 1;}
+            &:nth-child(10) {width: $width* 2;}
+        }
+    }
+
+
+}
+
+// 779px < width < 1023px 
+@media screen and (max-width : 1023px){
+
+    $width : 33.333%;
+
+    #main{
+        article{
+            &:first-child{width : $width * 3; }
+            &:nth-child(2) {width : $width * 2;}
+            &:nth-child(3) {width : $width * 1;}
+            &:nth-child(4){display: none;}/* 반대는 display : block */
+            &:nth-child(5) {width : $width * 1;}
+            &:nth-child(6) {width: $width * 2;}
+            &:nth-child(7){display: none;}/* 반대는 display : block */
+            &:nth-child(10){display: none;}/* 반대는 display : block */           
+            
+    }
+}
+}
+
+// 639px < width < 779px  
+@media screen and (max-width : 779px){
+    $width : 50%;
+    #main{
+        article{
+            &:first-child{width : $width * 2; }
+            &:nth-child(2) {width : $width * 2;}
+            &:nth-child(3) {display: none;}
+            &:nth-child(5) {width : $width * 1;}
+            &:nth-child(6) {width: $width * 1;}
+            &:nth-child(8) {width : $width * 1;}
+            &:nth-child(9) {width : $width * 1;}
+            &:nth-child(11){width : $width * 1;}/* 반대는 display : block */  
+            &:last-child {width : $width * 1;}/* 반대는 display : block */         
+            
+    }
+}
+}
+
+// 479px < width < 639px  
+@media screen and (max-width : 639px){
+    .nav-util{
+        display: none;
+    }
+
+}
+
+
+// 479px < width < 779px  
+@media screen and (max-width : 479px){
+    header  {
+        display: flex; justify-content: center; align-items: center;
+        position: fixed; top: 0;left: 0;right: 0;
+        z-index: 100; transform: translateY(-60px);
+        height: 100vh;        
+        *{color : $w;}
+                // absolute 를 지우면서 fixed로 하기 위해
+        .nav-goto{display: none;}
+
+        #gnb ul{
+            display: flex;flex-direction: column;
+            a{
+                display:block;
+                height: 20px;
+            }
+        }
+    }
+    #main{
+        article {
+            &:first-child{
+                width: 100%;height: 100vh;
+                position: fixed;top: 0;left: 0;right: 0;
+                strong{display: none;}
+            }
+            // 2번째 이후 모든 요소
+            &:nth-child(n+2){display: none;}            
+        }
+
+    }
+}

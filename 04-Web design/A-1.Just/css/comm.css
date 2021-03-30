@@ -1,0 +1,286 @@
+@charset "utf-8";
+
+*{
+    margin: 0; padding: 0;
+    font-size: 14px; line-height: 1.5; color: #222328;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;   
+}
+
+/* comm */
+.blind{
+    overflow: hidden;
+    font-size: 0;line-height: 0;
+    text-indent: -9999px;
+}
+
+.wrap{
+    width: 1200px; margin: 0 auto;
+    /* background-color: #eee; */
+    
+}
+
+header{
+    display: flex; justify-content: space-between;
+    height: 100px;
+    background: #fff;
+    position: relative;
+}
+.logo a{
+    display: block;
+    background: url(../images/logo-kakaoi.svg) 0 50% no-repeat;
+    width: 125px; height: 100px;
+    text-indent: -9999px;
+}
+nav{
+    display: flex;    align-items: center;  
+    /* width: 40%;  */
+    /* margin-right: -40px; */
+}
+
+.nav-depth1{
+    display: flex; justify-content: space-between; 
+    width: 100%;
+}
+
+.nav-depth1 > li{
+    position: relative;
+}
+
+.nav-depth1>li>a{
+    display: block; 
+    height: 100px; padding: 0 40px;
+    line-height: 100px;/* txt 수직 가운데 정렬 line-height를 엄마태그의 높이값 만큼 넣어주면 됨 */
+}
+
+.nav-depth1>li:hover >a {
+    color:tomato;
+    border-bottom: 3px solid tomato;
+}
+
+/* mouse-out */
+.nav-depth2 {
+    overflow: hidden;
+    /* display: none; */
+    position: absolute; top: 100px;left: 0;
+    z-index: 100;
+    width: 100%; padding-top: 0; height: 0;
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    transition: .5s;
+}
+
+/* mouse-over */
+nav:hover .nav-depth2, nav:hover .nav-bg{
+    height: 135px;
+    background-color: #fff;
+    padding: 10px;
+
+}
+
+.nav-depth2 a{
+    display: block;
+    padding: 4px 0;
+    text-align: center; 
+}
+
+.nav-depth2 a:hover{
+    background-color:tomato;
+    color:#ffff;
+}
+
+.nav-bg {
+    /* display: none; */
+    position: absolute; top: 100px; left: 0; 
+    z-index: 100;
+    width: 100%; height: 0; 
+    background: #fff; border-top: 1px solid tomato;
+    transition: height .5s;
+  }
+
+.slide {
+    position:relative;
+    height: 300px;overflow: hidden;
+    /* animation: slide 5s linear 2s infinite alternate; */
+}
+
+.slide ul{
+    display: flex;
+    position: absolute; top: 0; left: 0;
+}
+/* 
+@keyframes slide{
+    0%   {top 0;left :0}}
+    25%   {top 0;left :-1200px}}
+    50%   {top 0;left :-2400px}}
+    100%   {top 0;left :0}}
+} */
+
+/* container */
+.container{ 
+    display: flex;justify-content: space-between;
+    height: 200px;padding: 10px 0;
+}
+.container .tab,.container > section {
+    width: 30%;
+}
+.container .tab {
+    display: flex;
+    position: relative;
+}
+.tab .cont-tab{
+    display: none;
+    position: absolute;top: 60px;;left: 0;
+    width: 360px;
+}
+.tab .on .cont-tab{
+    display: block;
+}
+/* 비활성화 탭 */
+.tab .tit-tab > a{
+    display: block;
+    height: 50px;background-color: #eee;
+    text-align: center;line-height: 50px;
+    border-bottom: 3px solid #010192;
+}
+/* 활성화탭 */
+.tab .on .tit-tab a{
+    background-color:rgb(1, 1, 146);
+    color: white;
+}
+
+.sec-bbs {
+    width: 50%;
+}
+.sec-gallery {
+    width: 50%;
+    height: 100%;
+}
+
+/* sec-bbs */
+
+.sec-bbs .cont-tab a{
+    display: block;
+    padding: 4px 0; /* padding으로 사이간격 조절 */
+    white-space: nowrap; /* 한줄로 */
+    overflow: hidden; /* 넘어가는것은 줄여줘 */
+    text-overflow: ellipsis; /* 넘치는 것은 말줄임 */
+}
+.sec-bbs .cont-tab a::before{
+    display: inline-block;
+    content: " ";
+    width: 5px;height: 5px;
+    background: red;
+    margin : -5px 5px 0 0;
+    vertical-align: middle;
+ }
+ 
+ /* sec-gallery */
+ .sec-gallery ul{
+     display: flex;    justify-content: space-between;
+}
+.sec-gallery img{
+    width: 100%;
+}
+.sec-gallery li{
+    width: 30%;
+}
+.sec-gallery a{
+    display: block;
+}
+.sec-gallery img{
+    height: 120px; object-fit: cover; object-position: 100% 50%;
+}
+
+/* banner */
+.sec-bnr img{
+    width: 360px; height: 180px;
+    object-fit: cover;object-position: 50% 50%;
+}
+
+.sec-bnr a{
+    display: block;
+}
+
+/* goto */
+.sec-goto a{
+    display: block;
+    height: 50px;padding-left: 60px;line-height: 50px;
+    /* line-height 높이값 만큼 넣으면 가운데 정렬 됨 */
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+.sec-goto li:first-child a{
+    background-image: url(../images/ico-goto1.png);
+}
+.sec-goto li:nth-child(2) a{
+    background-image: url(../images/ico-goto2.png);
+}
+.sec-goto li:nth-child(3) a{
+    background-image: url(../images/ico-goto3.png);
+}
+.sec-goto li:last-child a{
+    background-image: url(../images/ico-goto4.png);
+}
+.sec-goto .lst-goto{
+    display: flex;justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.lst-goto li{
+    width: 50%;
+    margin: 20px 0 20px 0;
+}
+.sec-goto .cont .cont-tab{
+    height: 100%;
+    display: flex;align-items: center;
+}
+
+/* footer */
+
+footer {
+    display: flex; justify-content: space-between;
+    background-color: #999;
+  }
+  .copyright {
+    margin-top: 40px;
+    color: #fff;
+  }
+  .lst-sns {
+    display: flex;
+    margin-top: 20px;
+  }
+  .lst-sns a {
+    display: block;
+    padding: 20px; color: #fff;
+  }
+
+.modal-wrap{
+    display: none; justify-content: center;align-items: center;
+    position: fixed;top: 0;left: 0;right: 0;bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);z-index: 110;
+}
+.modal-wrap .inner {
+    position: relative;
+    width: 668px;height: 553px;
+}    
+.modal-wrap img {
+    /* overflow: hidden;*/
+    border-radius: 33px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modal-wrap button{
+    display: flex;justify-content: center;align-items: center;
+    position: absolute; top: -30px;right: -30px;
+    width: 70px;height: 70px;border-radius: 50%;
+    background-color: #fff;
+    border: none; cursor: pointer;/* input은 손가락 모양으로 안변하므로 */
+    /* 이미지 x 버튼 넣고 싶으면 bg 이미지 넣고, bg-position 으로 가운데 정렬 */
+}
+
+.modal-wrap .las {
+    display: block;
+    font-size: 2em;
+}
+
