@@ -204,23 +204,67 @@ input[type=password] {
   content: '';
 }
 
+.sec-tit {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 500;
+  color: #000;
+  line-height: 1.2em;
+  letter-spacing: -0.03em;
+}
+
 #header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  background-color: transparent;
+  /* 배경 투명 */
 }
 
-#header .logo {
+#header.sticky {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+#header.sticky * {
+  color: #000 !important;
+}
+
+#header.sticky .logo {
   margin-bottom: 0;
 }
 
-#header #collapsibleNavbar .show {
-  position: fixed;
-  top: 56px;
-  left: 0;
-  right: 0;
-  height: 100vh;
-  background-color: #000;
-  opacity: 0.3;
+#header.sticky .logo a {
+  color: #fff;
+}
+
+#header #collapsibleNavbar .nav-link {
+  color: #000;
+}
+
+#header #collapsibleNavbar .nav-link.active {
+  color: purple;
+}
+
+.sec-g .container {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.sec-2 {
+  background-color: #eee;
+}
+
+.carousel img {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#footer {
+  padding: 100px 0;
+  /* 양옆은 패딩 넣으면 그리드가 망가짐 */
+  background: #ccc;
 }
 /*# sourceMappingURL=comm.css.map */

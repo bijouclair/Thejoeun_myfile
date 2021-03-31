@@ -1,20 +1,86 @@
 @charset "UTF-8";
-@import "contents", "main","mixins","reset", "variables";
+@import "contents", "main", "mixins", "reset", "variables";
 
-#header{
-   justify-content: space-between;
 
-    .logo{
-        margin-bottom: 0;
-    }
+//comm/* 공통 만들어서, 타이틀 버튼 탭 디자인 놓고 */
+.sec-tit {
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 500;
+    color: #000;
+    line-height: 1.2em;
+    letter-spacing: -0.03em;
+}
 
-    #collapsibleNavbar .show{
+// .wrap {
+//     padding-top: 56px;
+// }
+
+
+#header {
+    justify-content: space-between;
+    // background-color: #ccc !important;
+    background-color: transparent;
+    /* 배경 투명 */
+
+
+    &.sticky {
+        background-color: $w;
+        border-bottom: 1px solid #eee;
+
+        * {
+            color: $b !important;
+        }
+
+        .logo {
+            margin-bottom: 0;
+
+            a {
+                color: $w;
+            }
+        }
+
+        // #collapsibleNavbar.show {
+        //     position: fixed;top: 56px;left: 0;right: 0;
+        //     height: 100vh;
+        //     background: tomato;
         // 중복 클래스로 show가 붙은 모바일 버전에서만 
-        position: fixed; top: 56px;left: 0;right: 0;
-        height: 100vh;
-        background-color: #000;    
-        opacity: 0.3;    
-
         // 2depth 디자인할때, html에 show라는 클래스 추가했다가 추후 삭제 가능
     }
+
+    #collapsibleNavbar {
+        .nav-link {
+            color: $b;
+
+            &.active {
+                color: purple;
+            }
+        }
+    }
+
 }
+
+    .sec-g {
+        .container {
+            padding: 100px 0;
+            text-align: center;
+        }
+    }
+
+    .sec-2 {
+        background-color: #eee;
+    }
+
+    .carousel {
+        img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+    }
+
+    #footer {
+        padding: 100px 0;
+        /* 양옆은 패딩 넣으면 그리드가 망가짐 */
+        background: #ccc;
+    }
