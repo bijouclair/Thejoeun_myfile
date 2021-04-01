@@ -221,6 +221,14 @@ input[type=password] {
   /* 배경 투명 */
 }
 
+#header .logo {
+  margin-bottom: 0;
+}
+
+#header .logo a {
+  color: #fff;
+}
+
 #header.sticky {
   background-color: #fff;
   border-bottom: 1px solid #eee;
@@ -239,11 +247,7 @@ input[type=password] {
 }
 
 #header #collapsibleNavbar .nav-link {
-  color: #000;
-}
-
-#header #collapsibleNavbar .nav-link.active {
-  color: purple;
+  color: #fff;
 }
 
 .sec-g .container {
@@ -255,9 +259,9 @@ input[type=password] {
   background-color: #eee;
 }
 
-.carousel img {
+.slide-top img {
   width: 100%;
-  height: 400px;
+  height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -266,5 +270,90 @@ input[type=password] {
   padding: 100px 0;
   /* 양옆은 패딩 넣으면 그리드가 망가짐 */
   background: #ccc;
+}
+
+#scrollUp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #555;
+  color: #fff;
+  font-size: 0;
+}
+
+#scrollUp::before {
+  content: "\f106";
+  font-family: 'Line Awesome Free';
+  font-weight: 900;
+  font-size: 30px;
+  color: #ccc;
+}
+
+.ani-slide {
+  visibility: hidden;
+  -webkit-transform: translateY(60px);
+          transform: translateY(60px);
+}
+
+.ani-slide.ani-top {
+  visibility: visible;
+  -webkit-animation: object-slide 1s forwards;
+          animation: object-slide 1s forwards;
+}
+
+@-webkit-keyframes object-slide {
+  0% {
+    -webkit-transform: translateY(60px);
+            transform: translateY(60px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes object-slide {
+  0% {
+    -webkit-transform: translateY(60px);
+            transform: translateY(60px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.btn-primary {
+  margin-top: 1.5rem !important;
+}
+
+.slide-sns .swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 300px;
+  background-color: #fff;
 }
 /*# sourceMappingURL=comm.css.map */

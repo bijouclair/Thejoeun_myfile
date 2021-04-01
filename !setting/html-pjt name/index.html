@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>subtitle : maintitle (회사이름)</title>
-    <!-- 사장님 인사말 : 회사소개 : 회사이름  (3depth일 경우)-->
-    <!-- 하단 메타태그 넣기 // 메타태그 기획자에게 달라고 요청하기 -->
+    <title>사장님 인사말 : 회사소개 : 회사이름</title>
     <meta name="description" content="네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요">
     <meta property="og:title" content="네이버">
     <meta property="og:url" content="https://www.naver.com/">
@@ -15,29 +13,30 @@
     <meta property="og:description" content="네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="">
-    <meta name="twitter:url" content="https://www.naver.com/"><!-- 경로 -->
+    <meta name="twitter:url" content="https://www.naver.com/">
     <meta name="twitter:image" content="https://s.pstatic.net/static/www/mobile/edit/2016/0705/mobile_212852414260.png">
-    <!-- 로고 -->
     <meta name="twitter:description" content="네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요">
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- line awesome  -->
+    <!-- line awesome -->
     <link rel="stylesheet"
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <!-- 웹폰트 연결하기  -->
-    <link rel="stylesheet" href="./dist/fonts/fonts.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+    <!-- web fonts  -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
         rel="stylesheet">
-    <!-- comm.css 추가 // 내 것은 맨 밑에 넣기 -->
+    <!-- wow -->
+    <link rel="stylesheet" href="./dist/vendor_lib/wow/animate.css">
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- comm.css -->
     <link rel="stylesheet" href="./dist/css/comm.css">
 </head>
 
-<body  data-spy="scroll" data-target=".navbar" data-offset="50">
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 
     <div class="wrap">
-
         <!-- header -->
-        <header id="header" class="navbar navbar-expand-md  navbar-dark fixed-top sticky">
+        <header id="header" class="navbar fixed-top navbar-expand-md navbar-dark">
             <div class="container">
                 <!-- Brand -->
                 <h1 class="navbar-brand logo">
@@ -56,7 +55,6 @@
                         <ul class="navbar-nav nav-depth1">
                             <li class="nav-item">
                                 <a class="nav-link" href="#section1">menu1</a>
-                                <!-- section1부분에 뉴스면 news 등으로 이름으로 적기 -->
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#section2">menu2</a>
@@ -72,135 +70,137 @@
         <!-- //header -->
 
         <!-- slide -->
-        <div id="demo" class="carousel slide" data-ride="carousel">
-
-            <!-- Indicators -->
-            <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0" class="active"></li>
-                <li data-target="#demo" data-slide-to="1"></li>
-                <li data-target="#demo" data-slide-to="2"></li>
-            </ul>
-
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./images/la.jpg" alt="Los Angeles">
-                </div>
-                <div class="carousel-item">
-                    <img src="./images/chicago.jpg" alt="Chicago">
-                </div>
-                <div class="carousel-item">
-                    <img src="./images/ny.jpg" alt="New York">
-                </div>
+        <!-- Swiper -->
+        <div class="swiper-container slide-top ">
+            <div class="swiper-wrapper ">
+                <div class="swiper-slide"><img src="./images/chicago.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="./images/la.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="./images/ny.jpg" alt=""></div>
             </div>
-
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
-
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
+
         <!-- //slide -->
 
         <!-- main -->
         <div id="main">
-            <!-- section 1 -->
+            <!-- section1 -->
             <section id="section1" class="sec-g sec-1">
-                <!-- title부분 변경 -->
                 <div class="container">
-                    <h2 class="sec-tit">섹션타이틀</h2>
-                    <div class="sec-cont">섹션내용</div>
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#menu1">Menu 1</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
-                        </li>
-                    </ul>
+                    <h2 class="sec-tit wow bounceInUp">Title</h2>
+                    <div class="sec-cont wow bounceInUp" data-wow-delay=".5s">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#menu1">Menu 1</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
+                            </li>
+                        </ul>
 
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div class="tab-pane container active" id="home">home</div>
-                        <div class="tab-pane container fade" id="menu1">menu1</div>
-                        <div class="tab-pane container fade" id="menu2">menu2</div>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane container active" id="home">Home</div>
+                            <div class="tab-pane container fade" id="menu1">Menu 1</div>
+                            <div class="tab-pane container fade" id="menu2">Menu 2</div>
+                        </div>
                     </div>
-
-
                 </div>
             </section>
-            <!-- //section 1 -->
+            <!-- //section1 -->
 
-            <!-- section 2 -->
+            <!-- section2 -->
             <section id="section2" class="sec-g sec-2">
-                <!-- title부분 변경 -->
                 <div class="container">
-                    <h2 class="sec-tit">섹션타이틀</h2>
-                    <div class="sec-cont">섹션내용</div>
-                </div>
-            </section>
-            <!-- //section 2 -->
+                    <h2 class="sec-tit ">Title</h2>
+                    <div class="sec-cont slide-ani">
+                        <div class="swiper-container slide-sns">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">Slide 1</div>
+                                <div class="swiper-slide">Slide 2</div>
+                                <div class="swiper-slide">Slide 3</div>
+                                <div class="swiper-slide">Slide 4</div>
+                                <div class="swiper-slide">Slide 5</div>
+                                <div class="swiper-slide">Slide 6</div>
+                                <div class="swiper-slide">Slide 7</div>
+                                <div class="swiper-slide">Slide 8</div>
+                                <div class="swiper-slide">Slide 9</div>
+                                <div class="swiper-slide">Slide 10</div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
 
-            <!-- section 3 -->
-            <section id="section3" class="sec-g sec-title">
-                <!-- title부분 변경 -->
+                        </div>
+                    </div>
+            </section>
+            <!-- //section2 -->
+
+            <!-- section3 -->
+            <section id="section3" class="sec-g sec-3">
                 <div class="container">
-                    <h2 class="sec-tit">Contacts</h2>
-                    <div class="sec-cont">
+                    <h2 class="sec-tit ani-slide">Contacts</h2>
+                    <div class="sec-cont ani-slide">
                         <form action="" method="post">
                             <div class="row">
-                                <div class="col-md-1 ">
-                                    <label for="name text-start">이름 </label>
+                                <div class="col-md-1 txt-left">
+                                    <label for="name">이름</label>
                                 </div>
-                                <div class="col-md-4 ">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="name">
-                                    </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" id="name">
                                 </div>
-                                <!-- <div class="col-md-1 "></div>빈칸 만들기 위해  -->
-                                <div class="col-md-1 offset-md-1">
-                                    <label for="phone text-start">연락처</label>
+                                <div class="col-md-1 offset-md-1 txt-left">
+                                    <!-- 한칸 띄우기 -->
+                                    <label for="phone">연락처</label>
                                 </div>
                                 <div class="col-md-5">
                                     <input type="tel" class="form-control" id="phone">
                                 </div>
+                                <div class="col-md-12 mt-4">
+                                    <label for="comment" class="blind">문의하기</label>
+                                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                                </div>
                             </div>
-                            <div class="col-md-12">
-                                <label for="comment" class="blind">문의하기</label>
-                                <textarea class="form-control" rows="5" id="comment"></textarea>
-                            </div>
+                            <button type="submit" class="btn btn-primary mt-4">Submit</button>
+                        </form>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
                 </div>
             </section>
-            <!-- //section 3 -->
+            <!-- //section3 -->
         </div>
         <!-- //main -->
-
-
-
-
 
         <!-- footer -->
         <footer id="footer">
 
-
         </footer>
         <!-- //footer -->
+
+
     </div>
 
 
-    <!-- bootstrap -->
+    <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- scrollUp -->
+    <script src="./dist/vendor_lib/jquery.scrollUp.min.js"></script>
+    <!-- wow -->
+    <script src="./dist/vendor_lib/wow/wow.min.js"></script>
+    <!-- swiper -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- comm.js -->
     <script src="./dist/js/comm.js"></script>
 </body>
 

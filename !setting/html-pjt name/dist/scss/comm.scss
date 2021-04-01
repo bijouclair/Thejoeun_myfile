@@ -23,21 +23,18 @@
     background-color: transparent;
     /* 배경 투명 */
 
-
+    .logo {
+        margin-bottom: 0;
+        a { color: $w; }
+    }
+    
     &.sticky {
         background-color: $w;
         border-bottom: 1px solid #eee;
-
-        * {
-            color: $b !important;
-        }
-
+        * {color: $b !important;}
         .logo {
             margin-bottom: 0;
-
-            a {
-                color: $w;
-            }
+            a { color: $w; }
         }
 
         // #collapsibleNavbar.show {
@@ -50,37 +47,87 @@
 
     #collapsibleNavbar {
         .nav-link {
-            color: $b;
-
-            &.active {
-                color: purple;
-            }
+            color: $w;
+        //    &.active {color:$w;}
         }
     }
-
 }
 
-    .sec-g {
-        .container {
-            padding: 100px 0;
-            text-align: center;
-        }
-    }
-
-    .sec-2 {
-        background-color: #eee;
-    }
-
-    .carousel {
-        img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
-    }
-
-    #footer {
+.sec-g {
+    .container {
         padding: 100px 0;
-        /* 양옆은 패딩 넣으면 그리드가 망가짐 */
-        background: #ccc;
+        text-align: center;
     }
+}
+
+.sec-2 {
+    background-color: #eee;
+}
+
+.slide-top {
+    img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+}
+
+#footer {
+    padding: 100px 0;
+    /* 양옆은 패딩 넣으면 그리드가 망가짐 */
+    background: #ccc;
+}
+
+// 페이지 위로 스크롤
+#scrollUp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #555;
+    color: #fff;
+    font-size: 0;
+
+    &::before {
+        content: "\f106";
+        // position:relative; right:10px ;bottom:7px;
+        font-family: 'Line Awesome Free';
+        font-weight: 900;
+        font-size: 30px;
+        color: #ccc;
+    }
+}
+
+// main > section2 > ani-slide
+.ani-slide {
+    visibility: hidden;
+    transform: translateY(60px);
+
+    &.ani-top {
+        visibility: visible;
+        animation: object-slide 1s forwards;
+    }
+
+    @keyframes object-slide {
+        0% {  transform: translateY(60px); opacity :0;}
+        100% { transform: translateY(0); opacity :1;}
+    }
+}
+
+// main > section3 > contact button 
+.btn-primary {
+    margin-top: 1.5rem !important;
+}
+
+// main > section2
+.slide-sns {
+    .swiper-slide{
+        display: flex;align-items: center;justify-content: center;
+        height: 300px;background-color: $w;
+    }
+}
