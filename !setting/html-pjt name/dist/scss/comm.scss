@@ -1,8 +1,10 @@
 @charset "UTF-8";
-@import "contents", "main", "mixins", "reset", "variables";
+@import 'reset', 'variables', 'mixins';
 
-
-//comm/* 공통 만들어서, 타이틀 버튼 탭 디자인 놓고 */
+// comm
+.txt-left {
+    text-align: left;
+}
 .sec-tit {
     margin-bottom: 30px;
     font-size: 30px;
@@ -12,122 +14,169 @@
     letter-spacing: -0.03em;
 }
 
-// .wrap {
-//     padding-top: 56px;
-// }
-
-
+.wrap {
+    // padding-top: 55px;
+}
 #header {
     justify-content: space-between;
-    // background-color: #ccc !important;
-    background-color: transparent;
-    /* 배경 투명 */
-
-    .logo {
-        margin-bottom: 0;
-        a { color: $w; }
-    }
-    
+    // background-color: #fff !important;
     &.sticky {
-        background-color: $w;
-        border-bottom: 1px solid #eee;
-        * {color: $b !important;}
-        .logo {
-            margin-bottom: 0;
-            a { color: $w; }
+        background: $w; border-bottom: 1px solid #eee;
+        * {
+            color: $b !important;
         }
-
-        // #collapsibleNavbar.show {
-        //     position: fixed;top: 56px;left: 0;right: 0;
-        //     height: 100vh;
-        //     background: tomato;
-        // 중복 클래스로 show가 붙은 모바일 버전에서만 
-        // 2depth 디자인할때, html에 show라는 클래스 추가했다가 추후 삭제 가능
     }
-
-    #collapsibleNavbar {
-        .nav-link {
+    .logo {
+        margin-bottom: 0; 
+        a {
             color: $w;
-        //    &.active {color:$w;}
+        }
+    }
+}
+#collapsibleNavbar {
+    .nav-link {
+        color: yellow;
+        &.active {
+            color: purple;
         }
     }
 }
 
 .sec-g {
+    overflow: hidden;
     .container {
         padding: 100px 0;
         text-align: center;
+        
     }
 }
 
 .sec-2 {
-    background-color: #eee;
+    background: #eee;
 }
 
 .slide-top {
-    img {
+    .swiper-slide {
+        position: relative;
+    }
+    .swiper-slide-active { 
+        .slide-txt{
+            transform: translate(-50%, -50%); opacity: 1;
+        }
+    }
+    .slide-txt {
+        position: absolute;top: 50%;left: 50%;
+        transform: translate(-50%, 30%); opacity: 0;
+        transition: all .5s;
         width: 100%;
-        height: 100vh;
+        font-size: 3rem; color: $w;
+        text-shadow: 0 0 3px $b;
+        // text-align: center;
+    }       
+    
+    @media screen and (min-width: 768px) {
+        .slide-txt {
+            max-width: 720px;
+        }
+    }
+    @media screen and (min-width: 992px) {
+        .slide-txt {
+            max-width: 960px;
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        .slide-txt {
+            max-width: 1140px;
+        }
+    }
+    img {
+        width: 100%; height: 100vh;
         object-fit: cover;
     }
 }
 
-#footer {
-    padding: 100px 0;
-    /* 양옆은 패딩 넣으면 그리드가 망가짐 */
-    background: #ccc;
+.slide-sns {
+    overflow: visible;
+    margin-bottom: 100px;
+    .swiper-slide {
+        display: flex;align-items: center; justify-content: center;
+        height: 300px;
+        background: $w;
+    }
+    .swiper-button-next {
+        right: -70px;
+    }
+    .swiper-button-prev {
+        left: -70px;
+    }
+    .swiper-pagination-bullets {
+        bottom: -40px;
+    }
 }
-
-// 페이지 위로 스크롤
-#scrollUp {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #555;
-    color: #fff;
-    font-size: 0;
-
-    &::before {
-        content: "\f106";
-        // position:relative; right:10px ;bottom:7px;
-        font-family: 'Line Awesome Free';
-        font-weight: 900;
-        font-size: 30px;
-        color: #ccc;
+.slide-mall {
+    position: relative;
+    .swiper-slide {
+        display: flex;align-items: center; justify-content: center;
+        height: 300px;
+        background: $w;
+    }
+    .swiper-button {
+        position: absolute;top: 50%; transform: translateY(-50%);
+        &::after {display: none;}
+        &::before {
+            display: block;
+            font-family: 'Line Awesome Free';
+            font-weight: 900;
+            font-size: 3em; color: red;
+        }
+    }
+    .swiper-button-next-out {
+        right: -60px;
+        &::before {
+            content: "\f061";
+        }
+    }
+    .swiper-button-prev-out {
+        left: -60px;
+        &::before {
+            content: "\f060";
+        }
     }
 }
 
-// main > section2 > ani-slide
+
+footer {
+    padding: 100px 0;
+    background: #ccc;
+}
+
+#scrollUp {
+    display: flex; justify-content: center; align-items: center;
+    width: 100px; height: 100px;padding: 10px 20px;
+    bottom: 20px;right: 20px;
+    background-color: #555; border-radius: 50%;
+    color: #fff;font-size: 0;
+    &::before {
+        display: block;
+        content: "\f106";
+        font-family: 'Line Awesome Free'; font-weight: 900; font-size: 45px; color: $w;
+    }
+}
+
+// ani-slide
 .ani-slide {
     visibility: hidden;
     transform: translateY(60px);
-
     &.ani-top {
         visibility: visible;
         animation: object-slide 1s forwards;
     }
-
     @keyframes object-slide {
-        0% {  transform: translateY(60px); opacity :0;}
-        100% { transform: translateY(0); opacity :1;}
+        0% {transform: translateY(60px); opacity: 0;}
+        100% {transform: translateY(0);opacity: 1;}
     }
 }
 
-// main > section3 > contact button 
-.btn-primary {
-    margin-top: 1.5rem !important;
-}
 
-// main > section2
-.slide-sns {
-    .swiper-slide{
-        display: flex;align-items: center;justify-content: center;
-        height: 300px;background-color: $w;
-    }
-}
+/*ㅇㅇ*/
+//ㅇㅇ

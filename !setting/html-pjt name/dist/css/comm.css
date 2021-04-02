@@ -204,6 +204,10 @@ input[type=password] {
   content: '';
 }
 
+.txt-left {
+  text-align: left;
+}
+
 .sec-tit {
   margin-bottom: 30px;
   font-size: 30px;
@@ -217,8 +221,15 @@ input[type=password] {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: transparent;
-  /* 배경 투명 */
+}
+
+#header.sticky {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+#header.sticky * {
+  color: #000 !important;
 }
 
 #header .logo {
@@ -229,25 +240,16 @@ input[type=password] {
   color: #fff;
 }
 
-#header.sticky {
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
+#collapsibleNavbar .nav-link {
+  color: yellow;
 }
 
-#header.sticky * {
-  color: #000 !important;
+#collapsibleNavbar .nav-link.active {
+  color: purple;
 }
 
-#header.sticky .logo {
-  margin-bottom: 0;
-}
-
-#header.sticky .logo a {
-  color: #fff;
-}
-
-#header #collapsibleNavbar .nav-link {
-  color: #fff;
+.sec-g {
+  overflow: hidden;
 }
 
 .sec-g .container {
@@ -256,7 +258,50 @@ input[type=password] {
 }
 
 .sec-2 {
-  background-color: #eee;
+  background: #eee;
+}
+
+.slide-top .swiper-slide {
+  position: relative;
+}
+
+.slide-top .swiper-slide-active .slide-txt {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.slide-top .slide-txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 30%);
+          transform: translate(-50%, 30%);
+  opacity: 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  width: 100%;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+}
+
+@media screen and (min-width: 768px) {
+  .slide-top .slide-txt {
+    max-width: 720px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .slide-top .slide-txt {
+    max-width: 960px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .slide-top .slide-txt {
+    max-width: 1140px;
+  }
 }
 
 .slide-top img {
@@ -266,9 +311,92 @@ input[type=password] {
      object-fit: cover;
 }
 
-#footer {
+.slide-sns {
+  overflow: visible;
+  margin-bottom: 100px;
+}
+
+.slide-sns .swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 300px;
+  background: #fff;
+}
+
+.slide-sns .swiper-button-next {
+  right: -70px;
+}
+
+.slide-sns .swiper-button-prev {
+  left: -70px;
+}
+
+.slide-sns .swiper-pagination-bullets {
+  bottom: -40px;
+}
+
+.slide-mall {
+  position: relative;
+}
+
+.slide-mall .swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 300px;
+  background: #fff;
+}
+
+.slide-mall .swiper-button {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.slide-mall .swiper-button::after {
+  display: none;
+}
+
+.slide-mall .swiper-button::before {
+  display: block;
+  font-family: 'Line Awesome Free';
+  font-weight: 900;
+  font-size: 3em;
+  color: red;
+}
+
+.slide-mall .swiper-button-next-out {
+  right: -60px;
+}
+
+.slide-mall .swiper-button-next-out::before {
+  content: "\f061";
+}
+
+.slide-mall .swiper-button-prev-out {
+  left: -60px;
+}
+
+.slide-mall .swiper-button-prev-out::before {
+  content: "\f060";
+}
+
+footer {
   padding: 100px 0;
-  /* 양옆은 패딩 넣으면 그리드가 망가짐 */
   background: #ccc;
 }
 
@@ -282,23 +410,24 @@ input[type=password] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  padding: 10px 20px;
   bottom: 20px;
   right: 20px;
-  padding: 10px 20px;
   background-color: #555;
+  border-radius: 50%;
   color: #fff;
   font-size: 0;
 }
 
 #scrollUp::before {
+  display: block;
   content: "\f106";
   font-family: 'Line Awesome Free';
   font-weight: 900;
-  font-size: 30px;
-  color: #ccc;
+  font-size: 45px;
+  color: #fff;
 }
 
 .ani-slide {
@@ -339,21 +468,5 @@ input[type=password] {
   }
 }
 
-.btn-primary {
-  margin-top: 1.5rem !important;
-}
-
-.slide-sns .swiper-slide {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 300px;
-  background-color: #fff;
-}
+/*ㅇㅇ*/
 /*# sourceMappingURL=comm.css.map */
