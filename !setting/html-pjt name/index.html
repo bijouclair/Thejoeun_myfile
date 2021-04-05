@@ -20,7 +20,7 @@
   <link rel="stylesheet"
     href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./dist/vendor/wow/animate.css">
+  <link rel="stylesheet" href="./dist/vendor_lib/wow/animate.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./dist/css/comm.css">
 </head>
@@ -35,44 +35,41 @@
         <h1 class="navbar-brand logo">
           <a href="#">Navbar</a>
         </h1>
-        <nav class="active">
+        <nav id="gnb" class="active">
 
           <!-- Toggler/collapsibe Button -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
-
+          <div class="nav-bg"></div>
           <!-- Navbar links -->
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav nav-depth1">
               <li class="nav-item">
-                <a class="nav-link" href="#section1">menu1</a>
-                <ul class="nav-depth2">
-                  <li><a href="#">menu1-1</a></li>
-                  <li><a href="#">menu1-2</a></li>
-                  <li><a href="#">menu1-3</a></li>
-                  <li><a href="#">menu1-4</a></li>
-                  <li><a href="#">menu1-5</a></li>
+                  <a class="nav-link" href="#section1">menu1</a>
+                  <ul class="nav-depth2">
+                       <li><a href="#">menu1-1</a></li>
+                       <li><a href="#">menu1-2</a></li>
+                       <li><a href="#">menu1-3</a></li>
+                       <li><a href="#">menu1-4</a></li>
                 </ul>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#section2">menu2</a>
                 <ul class="nav-depth2">
-                  <li><a href="#">menu2-1</a></li>
-                  <li><a href="#">menu2-2</a></li>
-                  <li><a href="#">menu2-3</a></li>
-                  <li><a href="#">menu2-4</a></li>
-                  <li><a href="#">menu2-5</a></li>
+                        <li><a href="#">menu2-1</a></li>
+                        <li><a href="#">menu2-2</a></li>
+                        <li><a href="#">menu2-3</a></li>
+                        <li><a href="#">menu2-4</a></li>
                 </ul>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#section3">menu3</a>
                 <ul class="nav-depth2">
-                  <li><a href="#">menu3-1</a></li>
-                  <li><a href="#">menu3-2</a></li>
-                  <li><a href="#">menu3-3</a></li>
-                  <li><a href="#">menu3-4</a></li>
-                  <li><a href="#">menu3-5</a></li>
+                        <li><a href="#">menu3-1</a></li>
+                        <li><a href="#">menu3-2</a></li>
+                        <li><a href="#">menu3-3</a></li>
+                        <li><a href="#">menu3-4</a></li>
                 </ul>
               </li>
             </ul>

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import 'reset', 'variables', 'mixins';
+@import 'contents', 'main', 'reset', 'variables', 'mixins';
 
 // comm
 .txt-left {
@@ -14,11 +14,54 @@
     letter-spacing: -0.03em;
 }
 
+// 210405 네비게이션
+#gnb {    
+    text-align: center;
+    overflow: hidden;
+    // 마우스오버시
+    &.active{
+        .nav-depth2, .nav-bg{
+            height: 160px;opacity: 1;
+        }
+    }
+    .nav-bg{
+        position: absolute;top: 55px;left: 0;right: 0;
+        height: 0;/* 160px */opacity:0; transition : all .5s;
+        border-top: 1px solid $b;
+        border-bottom: 1px solid $b;
+        background-color:$w;
+    }    
+    .nav-depth1 > li{
+        position: relative;
+        &:hover, &:focus{
+            border-bottom: 2px solid tomato;
+        }
+        > a {
+            height: 55px; line-height: 55px;
+            padding: 0 25px;
+        }
+    }
+    .nav-depth2{
+        position: absolute;top: 55px;left: 0;right: 0;
+        height: 0; opacity:0; transition : all .5s;
+        a {
+            display: block;
+            padding: 4px 0;
+            color: $b;
+            &:hover, &:focus{
+                color: tomato !important;
+            }
+        }
+    }
+}
+
 .wrap {
     // padding-top: 55px;
+    position: relative;
 }
-#header {
-    justify-content: space-between;
+
+#header {    
+    justify-content: space-between;padding: 0;
     // background-color: #fff !important;
     &.sticky {
         background: $w; border-bottom: 1px solid #eee;
